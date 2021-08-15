@@ -97,7 +97,7 @@ int install_xray() {
     fscanf(config, "%s", uuid);
     fclose(config);
     config = fopen("/usr/local/etc/xray/config.json", "a");
-    fprintf(config, "       \"id\": \"%s\"\n", uuid);
+    fprintf(config, "                        \"id\": \"%s\"\n", uuid);
     fclose(config);
     system("curl https://cdn.jsdelivr.net/gh/HXHGTS/xray-websocket-no-tls/config.json.2 >> /usr/local/etc/xray/config.json");
     printf("正在启动xray并将xray写入开机引导项. . .\n");
